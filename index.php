@@ -4,5 +4,5 @@ Tarefa da ferramenta git
 
 Novas alterações para stash.
 
-
+Alterações para integracao
 
