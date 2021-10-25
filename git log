@@ -1,0 +1,31 @@
+[33mcommit 6384aa2b56aee2c8dd63661e026c40ba45ad3934[m[33m ([m[1;36mHEAD -> [m[1;32mbackend[m[33m)[m
+Author: Guilherme Henrique <guihensn@gmail.com>
+Date:   Thu Oct 21 08:26:17 2021 -0300
+
+    Alterações no backend
+
+[33mcommit c40bee62082769342ebc020b88766a3ce9cfe482[m
+Author: Guilherme Henrique <guihensn@gmail.com>
+Date:   Wed Oct 20 18:01:38 2021 -0300
+
+    Alterações para o front end
+
+[33mcommit 57e77e0fc674df2b351c97a5992dfdff5b5ed282[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Guilherme Henrique <guihensn@gmail.com>
+Date:   Wed Oct 20 17:04:39 2021 -0300
+
+    Revert "Novas alterações"
+    
+    This reverts commit e95ee5daee7ac6c252d4883c9fb76ce05acdda7b.
+
+[33mcommit e95ee5daee7ac6c252d4883c9fb76ce05acdda7b[m
+Author: Guilherme Henrique <guihensn@gmail.com>
+Date:   Wed Oct 20 17:00:34 2021 -0300
+
+    Novas alterações
+
+[33mcommit 6d41a4f7222dc165ec7b7c1ffd40503db7524e18[m
+Author: Guilherme Henrique <guihensn@gmail.com>
+Date:   Wed Oct 20 16:59:25 2021 -0300
+
+    Primeiro commit do repositorio
