@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "37c2dd56-9294-42e2-8488-9a6a65f69d7e",
+		"name": "Aceleração PHP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Testes de requisição",
+			"item": [
+				{
+					"name": "Buscar Distritos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://servicodados.ibge.gov.br/api/v1/localidades/distritos",
+							"protocol": "https",
+							"host": [
+								"servicodados",
+								"ibge",
+								"gov",
+								"br"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"distritos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Mesorregioes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://servicodados.ibge.gov.br/api/v1/localidades/estados/52/mesorregioes",
+							"protocol": "https",
+							"host": [
+								"servicodados",
+								"ibge",
+								"gov",
+								"br"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"estados",
+								"52",
+								"mesorregioes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Paises",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://servicodados.ibge.gov.br/api/v1/localidades/paises",
+							"protocol": "https",
+							"host": [
+								"servicodados",
+								"ibge",
+								"gov",
+								"br"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"paises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Municipios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://servicodados.ibge.gov.br/api/v1/localidades/municipios",
+							"protocol": "https",
+							"host": [
+								"servicodados",
+								"ibge",
+								"gov",
+								"br"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"municipios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Albuns",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/albums",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserir Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"userId\": 11,\r\n    \"id\": 20,\r\n    \"title\": \"Exercício 8\",\r\n    \"body\": \"Estive aqui.\"\r\n  }"
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "UserId",
+									"value": "11",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "95",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "body",
+									"disabled": true
+								},
+								{
+									"key": "body",
+									"value": "exercício 8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserir Album",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"id\": 1,\r\n    \"title\": \"Alterar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/albums/100",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"albums",
+								"100"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
