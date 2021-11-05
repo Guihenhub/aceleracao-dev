@@ -1,0 +1,1 @@
+Mensagem:Não pussui arquivo/Linha:26/Arquivo:/opt/lampp/htdocs/php-basico/exercicio56.php
