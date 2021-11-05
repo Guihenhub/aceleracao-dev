@@ -1,0 +1,7 @@
+9946,bb2b9e98-6313-41bb-a282-5cafa3143938,371449635398431,tok_mastercard_debit,4100000000000019,07,2027,819,2002
+8768,ff507340-fdc9-4539-9751-bb4fd3865a25,6011111111111117,tok_amex,4100000000000019,07,2023,810,8199
+5679,d9ca12ad-5476-4fdd-9c3e-50e9334c4833,Tin,1.13,Marisha Goyette Ret.,6.9.6,46.3.1,4.103.3,0.6.7
+7086,bfcdda83-f67a-48ce-8982-44470dbd0718,Lowenbrau,Maudite,Smoke-flavored,Sorachi Ace,1469 - West Yorkshire Ale,Caramel,72 IBU,9.8%,6.0°Blg
+1862,76855278-a591-4b10-8fd3-5c1ec12738a3,ochre,Jewelry,Rubber,Aerodynamic Aluminum Watch,82.96,0.49,SpecialPromo827897
+310,89ba4db0-38bc-4746-b211-90f925e57bbb,41,Acer,Xiaomi Mi 8 Pro,Windows 8,T6UuMUTani3VGY4vXGia,935
+4959,d6628d6c-c217-45dc-8abe-47d6cb9afce1,Professional,Pending,Cheque,Monthly,Monthly
