@@ -54,7 +54,6 @@
         }
     }
     
-
     $nota = new Nota(5,'Ventilador', 'Rápido',10,5,1);
     $nota->setPrecoVenda(3);
     $nota->setDescricao('Muito top');

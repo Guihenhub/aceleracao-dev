@@ -19,7 +19,7 @@
             var_export($dadosArray);
 
             fclose($arquivo);
-        }catch(Excetion $e){
+        }catch(Exception $e){
             echo "Arquivo $caminho não encontrado";
         }
     }

@@ -1,57 +1,39 @@
 <?php
-    require_once('ex_66/Pessoa.php');
+    require_once('ex_68/Animal.php');
+    require_once('ex_68/Ferramentas.php');
+    require_once('ex_68/Resultado.php');
 
-    class Secretaria extends Pessoa{
-        private int $id;
-        private string $funcao;
-        private string $horatrabalhada;
-        private string $horasExtras;
-        
-        public function __construct($nome,$cpf,$endereco,$nomePai,$nomeMae,$rg,$serialIdentificacao,$id,$funcao,$horatrabalhada,$horasExtras)
-        {
-            parent::__construct($nome,$cpf,$endereco,$nomePai,$nomeMae,$rg,$serialIdentificacao);
-            $this->id = $id;
-            $this->funcao = $funcao;
-            $this->horatrabalhada = $horatrabalhada;
-            $this->horasExtras = $horasExtras;
-        }
+    $animal1 = new AnimalClass('Peixe','José');
+    $animal2 = new AnimalClass('Gato','Pedro');
+    $animal3 = new AnimalClass('Peixe gato', 'Ana');
+    $animal4 = new AnimalClass('Gato','Igor');
+    $animal5 = new AnimalClass('Peixe gato', 'Flavia');
 
-        public function getId(){
-            return $this->id;
-        }
+    $ferramentas = new FerramentasClass();
+    $animais = [$animal1, $animal2, $animal3, $animal4, $animal5];
+    
+    function calculaQuantidade(array $animal, Ferramentas $ferramentas):array{
+        $listaEspecie = $ferramentas->classificaEspecies($animal); 
+       
+        $resultados = array();
 
-        public function getFuncao(){
-            return $this->funcao;
-        }
-
-        public function getHoraTrabalhada(){
-            return $this->horatrabalhada;
-        }
-
-        public function getHorasExtras(){
-            return $this->horasExtras;
-        }
-
-        public function toString(){
-            $dados = array(
-                'nome' => $this->nome,
-                'cpf' => $this->cpf,
-                'endereco' => $this->endereco,
-                'nomePai' => $this->nomePai,
-                'nomeMae' => $this->nomeMae,
-                'rg' => $this->rg,
-                'serialIdentificacao' => $this->serialIdentificacao,
-                'id' => $this->id,
-                'funcao' => $this->funcao,
-                'horatrabalhada' => $this->horatrabalhada,
-                'horasExtras' => $this->horasExtras
-            );
-
-            return json_encode($dados);
-        }
+        foreach($listaEspecie as $especie){
+            $array = $ferramentas->filtraEspecia($animal,$especie);
+ 
+            $resultado = new Resultado($especie, count($array));
+            
+            array_push($resultados, $resultado);
+        }   
+  
+        return $resultados;
     }
 
-    $secretaria = new Secretaria('Maria','00000000','Rua 0 Quadra 0 Lote 0 Bairro 0','Natan','Naraline',3333,3333,123123,'CEO','8h','8h30min');
+    $resultados = calculaQuantidade($animais, $ferramentas);
+    
+    foreach($resultados as $resultado){
+        $nome = $resultado->getNomeEspecie();
+        $quantidade = $resultado->getQuantidade();
 
-    var_dump($secretaria);
+        echo "$nome : $quantidade"."<br>";
+    }
 ?>
