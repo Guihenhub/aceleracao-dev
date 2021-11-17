@@ -1,8 +1,4 @@
 <?php
-    echo soma(1,2)."<br>";
-    echo par(2)."<br>";
-    echo qtdCaracteres("Ola mundo")."<br>";
-
     function qtdCaracteres($string){
         return strlen($string);
     }
