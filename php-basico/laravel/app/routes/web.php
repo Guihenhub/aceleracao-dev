@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\AssinaturaController;
+use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\PerfilController;
+use App\Models\Documentos;
 use Illuminate\Support\Facades\Route;
+use League\CommonMark\Node\Block\Document;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +23,9 @@ Route::get('/', function () {
 });
 
 Route::get('/perfil',[PerfilController::class, 'index']); 
+
+Route::get('/documentos',[DocumentoController::class, 'index'])->name('documento.index'); 
+Route::get('/documentos/{id}',[DocumentoController::class, 'exibir'])->name('documento.exibir'); 
+
+Route::get('/assinaturas',[AssinaturaController::class, 'index'])->name('assinatura.index'); 
+Route::get('/assinaturas/{id}',[AssinaturaController::class, 'exibir'])->name('assinatura.exibir'); 
