@@ -22,6 +22,6 @@
     Quantidade de caracteres : {{$assinatura['qtdCaracteres']}} <br>
     Assinatura padrão : {{$assinatura['AssinaturaPadrao']}} <br>
     Quantidade de assinaturas : {{$assinatura['qtdAssinaturas']}} <br>
-    <a href="{{route('assinatura.index')}}">Voltar</a>
+    <a href="{{route('assinaturas.index')}}">Voltar</a>
 </body>
 </html>

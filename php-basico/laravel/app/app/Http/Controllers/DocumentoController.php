@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DocumentoRequest;
 use App\Models\Documentos;
 use DateTime;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class DocumentoController extends Controller
             Log::channel('documentos')->info(''+$momentoConsulta->format(DateTime::ISO8601));
         }
 
-        return view('documentosView',compact('documentos'));
+        return view('documentos.documentosView',compact('documentos'));
     }
     
     function exibir($id){
@@ -27,6 +28,32 @@ class DocumentoController extends Controller
             return redirect()->route('documento.index');
         }
 
-        return view('exibedoc',compact('documento'));
+        return view('documentos.exibedoc',compact('documento'));
+    }
+
+    function novo(){
+        return view('documentos.novoDocumento');
+    }
+
+    function inserir(DocumentoRequest $form){
+        $documento = Documentos::create($form->all());
+
+        if(!$documento){
+            redirect()->route('documento.index')->with('mensagem',"Não foi possível criar o documento");
+        }
+
+        return redirect()->route('documento.index')->with('mensagem',"Documento criado com sucesso!");
+    }
+
+    function deletar($id){
+        $documento = Documentos::find($id);
+
+        if(!$documento){
+            redirect()->route('documento.index')->with('mensagem',"Não foi possível criar o documento");
+        }
+
+        $documento->delete();
+        
+        return redirect()->route('documento.index')->with('mensagem',"Documento {{$id}} foi deletado com sucesso");
     }
 }

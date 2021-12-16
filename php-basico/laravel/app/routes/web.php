@@ -25,7 +25,13 @@ Route::get('/', function () {
 Route::get('/perfil',[PerfilController::class, 'index']); 
 
 Route::get('/documentos',[DocumentoController::class, 'index'])->name('documento.index'); 
-Route::get('/documentos/{id}',[DocumentoController::class, 'exibir'])->name('documento.exibir'); 
+Route::get('/documentos/novo',[DocumentoController::class, 'novo'])->name('documento.novo');
+Route::get('/documentos/{id}',[DocumentoController::class, 'exibir'])->name('documento.exibir');
+Route::post('/documentos',[DocumentoController::class, 'inserir'])->name('documento.inserir');
+Route::delete('/documentos/{id}',[DocumentoController::class, 'deletar'])->name('documento.deletar');
 
-Route::get('/assinaturas',[AssinaturaController::class, 'index'])->name('assinatura.index'); 
-Route::get('/assinaturas/{id}',[AssinaturaController::class, 'exibir'])->name('assinatura.exibir'); 
+Route::get('/assinaturas',[AssinaturaController::class, 'index'])->name('assinaturas.index');
+Route::get('/assinaturas/novo',[AssinaturaController::class, 'novo'])->name('assinaturas.novo'); 
+Route::get('/assinaturas/{id}',[AssinaturaController::class, 'exibir'])->name('assinaturas.exibir'); 
+Route::post('/assinaturas',[AssinaturaController::class, 'inserir'])->name('assinaturas.inserir');
+Route::delete('/assinaturas/{id}',[AssinaturaController::class, 'deletar'])->name('assinaturas.deletar');
