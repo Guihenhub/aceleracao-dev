@@ -56,4 +56,24 @@ class DocumentoController extends Controller
         
         return redirect()->route('documento.index')->with('mensagem',"Documento {{$id}} foi deletado com sucesso");
     }
+
+    function listarPaginado(){
+        $documentos = Documentos::paginate(25);
+        $momentoConsulta = new DateTime('NOW');
+ 
+        if(!$documentos){ 
+            Log::channel('documentos')->info(''+$momentoConsulta->format(DateTime::ISO8601));
+        }
+
+        return view('documentos.documentosView',compact('documentos'));
+    }
+
+    public function login(){
+        $usuario = ["id" => rand(30, 200), "name" => "Guilherme"];
+        session(["usuario" => $usuario]);
+    }
+
+    public function logout(){
+        session()->forget('usuario');
+    }
 }

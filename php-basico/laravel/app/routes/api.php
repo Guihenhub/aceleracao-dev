@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\DocumentoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/documentos', [DocumentoController::class, 'index'])->name('api.documentos.index'); 
+Route::get('/documentos/{id}', [DocumentoController::class, 'exibir'])->name('api.documentos.exibir'); 

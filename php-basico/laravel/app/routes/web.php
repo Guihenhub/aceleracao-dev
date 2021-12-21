@@ -25,10 +25,16 @@ Route::get('/', function () {
 Route::get('/perfil',[PerfilController::class, 'index']); 
 
 Route::get('/documentos',[DocumentoController::class, 'index'])->name('documento.index'); 
+Route::get('/documentos/paginado',[DocumentoController::class,'listarPaginado'])->name('documento.paginado');
 Route::get('/documentos/novo',[DocumentoController::class, 'novo'])->name('documento.novo');
 Route::get('/documentos/{id}',[DocumentoController::class, 'exibir'])->name('documento.exibir');
-Route::post('/documentos',[DocumentoController::class, 'inserir'])->name('documento.inserir');
-Route::delete('/documentos/{id}',[DocumentoController::class, 'deletar'])->name('documento.deletar');
+Route::get('/login',[DocumentoController::class,'login'])->name('documento.login');
+Route::get('/logout',[DocumentoController::class,'logout'])->name('documento.logout');;
+
+Route::middleware('validapermissao')->group(function(){
+    Route::post('/documentos',[DocumentoController::class, 'inserir'])->name('documento.inserir');
+    Route::delete('/documentos/{id}',[DocumentoController::class, 'deletar'])->name('documento.deletar');
+});
 
 Route::get('/assinaturas',[AssinaturaController::class, 'index'])->name('assinaturas.index');
 Route::get('/assinaturas/novo',[AssinaturaController::class, 'novo'])->name('assinaturas.novo'); 
