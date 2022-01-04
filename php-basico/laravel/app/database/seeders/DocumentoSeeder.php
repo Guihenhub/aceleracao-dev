@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Documentos;
 use Illuminate\Database\Seeder;
 
 class DocumentoSeeder extends Seeder
@@ -13,6 +14,6 @@ class DocumentoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Documentos::factory()->count(15)->create();
     }
 }

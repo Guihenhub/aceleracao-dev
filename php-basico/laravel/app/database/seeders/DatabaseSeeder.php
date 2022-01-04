@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Documentos;
+use App\Models\User;
 use Carbon\Factory;
 use Database\Factories\DocumentosFactory;
+use Database\Factories\UserFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,7 +23,11 @@ class DatabaseSeeder extends Seeder
         $this->criarDocumento("Artigo seeder 3", 30, "Assinatura seeder 3", 30);
         */
 
-        Documentos::factory()->count(600)->create();
+        User::factory(5)->create();
+
+        $this->call([
+            DocumentoSeeder::class
+        ]);
     }
 
     public function criarDocumento($titulo, $qtdAssinantes, $assinatura, $qtdPaginas){
