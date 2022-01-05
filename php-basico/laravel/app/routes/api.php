@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\api\DocumentoController;
+use App\Http\Controllers\api\{DocumentoController,LoginController};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/login', [LoginController::class,'login']);
+Route::get('/logout', [LoginController::class,'logout']);
+Route::get('/refresh',[LoginController::class,'refresh']);
 
-Route::get('/documentos', [DocumentoController::class, 'index'])->name('api.documentos.index'); 
-Route::get('/documentos/{id}', [DocumentoController::class, 'exibir'])->name('api.documentos.exibir'); 
+
+
+Route::group(['middleware'=>'jwt.auth'],function(){    
+    Route::get('/documentos', [DocumentoController::class, 'index'])->name('api.documentos.index'); 
+    Route::get('/documentos/{id}', [DocumentoController::class, 'exibir'])->name('api.documentos.exibir'); 
+});

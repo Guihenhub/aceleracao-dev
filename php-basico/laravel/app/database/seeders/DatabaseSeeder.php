@@ -22,9 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->criarDocumento("Artigo seeder 2", 20, "Assinatura seeder 2", 20);
         $this->criarDocumento("Artigo seeder 3", 30, "Assinatura seeder 3", 30);
         */
-
         User::factory(5)->create();
-
+        
         $this->call([
             DocumentoSeeder::class
         ]);
