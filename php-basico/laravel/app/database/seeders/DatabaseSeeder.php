@@ -25,12 +25,14 @@ class DatabaseSeeder extends Seeder
         User::factory(5)->create();
         
         $this->call([
-            DocumentoSeeder::class
+            DocumentoSeeder::class,
+            AssinaturaSeeder::class,
+            AnalisesSeeder::class
         ]);
     }
 
     public function criarDocumento($titulo, $qtdAssinantes, $assinatura, $qtdPaginas){
-        Documentos::create(
+        Documentos::connection('pgsql')->create(
             [
                 "titulo" => $titulo,
                 "qtdAssinantes" => $qtdAssinantes,

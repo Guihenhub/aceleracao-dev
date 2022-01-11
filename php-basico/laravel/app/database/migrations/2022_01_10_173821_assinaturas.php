@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDocumentosTable extends Migration
+class Assinaturas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateDocumentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('documentos', function (Blueprint $table) {
+        Schema::connection('pgsql')->create('assinaturas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('titulo',150);
-            $table->integer('qtdAssinantes');
-            $table->string('assinatura');
-            $table->integer('qtdPaginas');
+            $table->integer('qtdCaracteres');
+            $table->string('AssinaturaPadrao');
+            $table->integer('qtdAssinaturas');
         });
     }
 
@@ -30,6 +29,6 @@ class CreateDocumentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('documentos');
+        Schema::connection('pgsql')->dropIfExists('assinaturas');
     }
 }

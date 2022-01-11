@@ -10,4 +10,5 @@ class Documentos extends Model
     use HasFactory;
 
     protected $fillable = ['titulo','qtdAssinantes','assinatura','qtdPaginas'];
+    protected $connection = "pgsql";
 }
