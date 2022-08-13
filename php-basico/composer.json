@@ -1,6 +1,0 @@
-{
-    "require":{
-        "kevinlebrun/slug.php": "*",
-        "lcobucci/jwt": "^4.1"
-    }
-}
